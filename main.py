@@ -14,9 +14,9 @@ def sequence_alignment(a, b):
             if j == 0:
                 dp[i,j] = -4 * i
             if A[i] == B[j]:
-                dp[i,j] = max(dp[i-1, j] - 4, dp[i,j-1] - 4,dp[i-1, j-1]+ 5)
+                dp[i,j] = max(dp[i-1, j] - 8, dp[i,j-1] - 8, dp[i-1, j-1]+ 5)
             else:
-                dp[i, j] = max(dp[i - 1, j] - 4, dp[i, j - 1] - 4, dp[i - 1, j - 1] + 5)
+                dp[i, j] = max(dp[i - 1, j] - 8, dp[i, j - 1] - 8, dp[i - 1, j - 1] - 4)
 
 
     print(dp)
