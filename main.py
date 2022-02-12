@@ -10,9 +10,9 @@ def sequence_alignment(a, b):
     for i in range(len(a)):
         for j in range(len(b)):
             if i == 0:
-                dp[i,j] = -4 * j
+                dp[i,j] = -8 * j
             if j == 0:
-                dp[i,j] = -4 * i
+                dp[i,j] = -8 * i
             if A[i] == B[j]:
                 dp[i,j] = max(dp[i-1, j] - 8, dp[i,j-1] - 8, dp[i-1, j-1]+ 5)
             else:
