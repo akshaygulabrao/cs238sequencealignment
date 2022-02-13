@@ -26,10 +26,10 @@ def sequence_alignment(a, b):
                 candidate_moves = [(dp[i - 1, j][0] - 8, 'up'), (dp[i, j - 1][0] - 8, 'left'), (dp[i - 1, j - 1][0] - 4, 'upleft')]
                 dp[i, j] = max(candidate_moves, key=lambda x: x[0])
 
-    print(dp)
-    return 0
+    # print(dp)
+    return dp[-1],max(dp[-1],key= lambda x:x[0])
 
-sequence_alignment(A,B)
+print(sequence_alignment(A,B))
 
 
 candidate_moves = [ (-16,'left'), (-16,'up'), (5, 'upleft')]
