@@ -1,7 +1,8 @@
 import numpy as np
+import math
 
-A = " ASDFASDFASDF" #ASDFASFDASFDSADASSDFADSFAASDF"
-B = " ASDFADSFASDF" #SADFDFSDFASSDASDAFFDSSADFSDAF"
+A = "ACGTACGTACGT" #ASDFASFDASFDSADASSDFADSFAASDF"
+B = "ACGTACGTACGT" #SADFDFSDFASSDASDAFFDSSADFSDAF"
 C = "ASDSDFASDFASFDASDFASDAFSADFSADFDSFSDAFSDF"
 
 def sequence_alignment(a, b):
@@ -29,9 +30,22 @@ def sequence_alignment(a, b):
     # print(dp)
     return dp[-1],max(dp[-1],key= lambda x:x[0])
 
+first_half = A[:len(A)//2+1], B[:len(B)//2+1]
+print(first_half)
+
+second_half = A[:len(A)//2-1:-1],B[:len(B)//2-1:-1]
+print(second_half)
+
+# print(second_half)
+print(len(A),len(B))
+print(A)
+print(A[:math.floor(len(A)//2)],len(A[:math.floor(len(A)//2)]))
+print(A[:math.floor(len(A)//2):-1],len(A[:math.floor(len(A)//2):-1]))
+print(sequence_alignment(A[:len(A)//2+1],B[:len(B)//2+1]))
+
+print(sequence_alignment(A[:len(A)//2-1:-1],B[:len(B)//2-1:-1]))
+
 print(sequence_alignment(A,B))
 
 
-candidate_moves = [ (-16,'left'), (-16,'up'), (5, 'upleft')]
-print(max(candidate_moves, key = lambda x:x[0]))
 

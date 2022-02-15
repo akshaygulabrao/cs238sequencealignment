@@ -3,6 +3,8 @@
 1. Finished the basic algorithmic version
 2. Need to implement backtracing
 3. Need to implement DC approach and O(n) space
+4. Based on http://akira.ruc.dk/~keld/teaching/algoritmedesign_f03/Artikler/05/Hirschberg75.pdf,
+it seems like its easier to do the linear space, and then the DC.
 ## Prompt
 We will discuss a space-saving technique for pairwise sequence alignment
     based on divide-and-conquer this week. The technique can be easily
