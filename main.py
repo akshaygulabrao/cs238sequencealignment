@@ -1,8 +1,9 @@
 import numpy as np
 import math
 
-A = "ACGTACGTACGT" #ASDFASFDASFDSADASSDFADSFAASDF"
-B = "ACGTACGTACGT" #SADFDFSDFASSDASDAFFDSSADFSDAF"
+A = "ACGTACGTACGT"
+B = "AGTACCTACCGT"
+
 C = "ASDSDFASDFASFDASDFASDAFSADFSADFDSFSDAFSDF"
 
 def sequence_alignment(a, b):
@@ -28,22 +29,8 @@ def sequence_alignment(a, b):
                 dp[i, j] = max(candidate_moves, key=lambda x: x[0])
 
     # print(dp)
-    return dp[-1],max(dp[-1],key= lambda x:x[0])
+    return max(dp[-1],key= lambda x:x[0])
 
-first_half = A[:len(A)//2+1], B[:len(B)//2+1]
-print(first_half)
-
-second_half = A[:len(A)//2-1:-1],B[:len(B)//2-1:-1]
-print(second_half)
-
-# print(second_half)
-print(len(A),len(B))
-print(A)
-print(A[:math.floor(len(A)//2)],len(A[:math.floor(len(A)//2)]))
-print(A[:math.floor(len(A)//2):-1],len(A[:math.floor(len(A)//2):-1]))
-print(sequence_alignment(A[:len(A)//2+1],B[:len(B)//2+1]))
-
-print(sequence_alignment(A[:len(A)//2-1:-1],B[:len(B)//2-1:-1]))
 
 print(sequence_alignment(A,B))
 
