@@ -29,7 +29,7 @@ def sequence_alignment(a, b):
                 dp[i, j] = max(candidate_moves, key=lambda x: x[0])
 
     # print(dp)
-    return max(dp[-1],key= lambda x:x[0])
+    return dp
 
 
 print(sequence_alignment(A,B))
