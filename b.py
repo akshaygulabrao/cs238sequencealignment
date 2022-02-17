@@ -32,8 +32,22 @@ def path(i1,j1,i2,j2):
                     c = max(S_minus[j] - 8, s - 4, c - 8)
                 s = S_minus[j]
                 S_minus[j] = c
-        S_plus[j2] = -10
-        print(S_plus)
+        print('\n\n')
+        S_plus[j2] = 0
+        for j in reversed(range(j1,j2)):
+            S_plus[j] = S_plus[j+1] - 8
+        for i in reversed(range(mid - 1,i2)):
+            print(S_plus)
+            s = S_plus[j2]
+            S_plus[j2] = c = S_plus[j2] - 8
+            for j in reversed(range(j1,j2)):
+                if a[i-1] == b[j-1]:
+                    c = max(S_plus[j] - 8,s + 5, c - 8)
+                else:
+                    c = max(S_plus[j] - 8, s - 4, c - 8)
+                s = S_plus[j]
+                S_plus[j] = c
+
 
 
 
